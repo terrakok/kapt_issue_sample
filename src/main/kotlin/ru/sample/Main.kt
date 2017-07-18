@@ -12,7 +12,7 @@ fun main(args: Array<String>) {
     val scope = Toothpick.openScope("root")
     scope.installModules(object : Module() {
         init {
-            bind(Long::class.java).withName(ComputerId::class.java).to(42L)
+            bind(java.lang.Long::class.java).withName(ComputerId::class.java).toInstance(java.lang.Long(42))
             bind(CompanyInfo::class.java).toInstance(CompanyInfo("Terrakok Inc."))
         }
     })
